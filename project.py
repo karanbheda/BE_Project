@@ -11,13 +11,13 @@ from collections import Counter
 from textblob import TextBlob
 from nltk.stem.wordnet import WordNetLemmatizer
 import nltk
-from flask import Flask, render_template
+#from flask import Flask, render_template
 stop = set(stopwords.words('english'))
 exclude = set(string.punctuation)
 lemma = WordNetLemmatizer()
 WORD = re.compile(r'\w+')
 p = nltk.PorterStemmer()
-app = Flask(__name__)
+#app = Flask(__name__)
 
 answerDictionary = {}
 allSentiments = ['positive','negative']
@@ -26,11 +26,12 @@ class project():
     def __init__(self):
         fetched_tweets = {}
         self.tweets = []
-        
+        self.totalFeedbacks = 0
         fileName = sys.argv[1]
         with open(fileName + '.json', 'r') as f:
             print("Reading ",fileName,".json")
             for line in f:
+                self.totalFeedbacks += 1 
                 tweet = json.loads(line)
                 fetched_tweets[tweet['id']] = tweet
                 
@@ -42,11 +43,30 @@ class project():
             self.allClusters = {}
             self.allClustersDictionary = {}
             self.initializeClustering()
-            #print(self.allClusters)
-            #self.printClusterLabels()
             answerDictionary[i] = self.createAnswerDictionary()
+            self.printPieChart()
 
         print(answerDictionary)
+        
+    def printPieChart(self):
+        
+        for i in range(len(answerDictionary)):
+            labels = []
+            values = []
+            
+            for k,v in answerDictionary[i].items():
+                labels.append(k)
+                values.append(len(v))
+            
+            plt.figure(i)
+            plt.title(allSentiments[i] + "feedbacks")
+            plt.pie(values, labels = labels, 
+            startangle=90, shadow = True,
+            radius = 1.2, autopct = '%1.1f%%')
+            
+            plt.legend()    
+            
+        plt.show()
         
     def createAnswerDictionary(self):
         dictionary = dict()
@@ -183,9 +203,9 @@ class project():
          
         return polarizedtweets
 
-@app.route('/result')
-def result():
-    return render_template('result.html', result1 = answerDictionary[0], result2 = answerDictionary[1])
+#@app.route('/result')
+#def result():
+#    return render_template('result.html', result1 = answerDictionary[0], result2 = answerDictionary[1])
    
          
 def main():
@@ -194,9 +214,7 @@ def main():
         exit(-1)
         
     xyz = project()
-    #text = nltk.word_tokenize("comfort comfortable quiet")
-    #print(nltk.pos_tag(text))
       
 if __name__ == '__main__':
     main()
-    app.run(debug = True)
+#    app.run(debug = True)
