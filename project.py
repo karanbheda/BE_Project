@@ -11,27 +11,28 @@ from collections import Counter
 from textblob import TextBlob
 from nltk.stem.wordnet import WordNetLemmatizer
 import nltk
-#from flask import Flask, render_template
+from flask import Flask, render_template
 stop = set(stopwords.words('english'))
 exclude = set(string.punctuation)
 lemma = WordNetLemmatizer()
 WORD = re.compile(r'\w+')
 p = nltk.PorterStemmer()
-#app = Flask(__name__)
+app = Flask(__name__)
 
 answerDictionary = {}
 allSentiments = ['positive','negative']
+totalFeedbacks = 0
 
 class project():
     def __init__(self):
         fetched_tweets = {}
-        self.tweets = []
-        self.totalFeedbacks = 0
+        self.tweets = [] 
         fileName = sys.argv[1]
+        totalFeedbacks = 0
         with open(fileName + '.json', 'r') as f:
             print("Reading ",fileName,".json")
             for line in f:
-                self.totalFeedbacks += 1 
+                totalFeedbacks += 1 
                 tweet = json.loads(line)
                 fetched_tweets[tweet['id']] = tweet
                 
@@ -44,7 +45,7 @@ class project():
             self.allClustersDictionary = {}
             self.initializeClustering()
             answerDictionary[i] = self.createAnswerDictionary()
-            self.printPieChart()
+            #self.printPieChart()
 
         print(answerDictionary)
         
@@ -203,9 +204,9 @@ class project():
          
         return polarizedtweets
 
-#@app.route('/result')
-#def result():
-#    return render_template('result.html', result1 = answerDictionary[0], result2 = answerDictionary[1])
+@app.route('/result')
+def result():
+    return render_template('index.html', result1 = 100, result2 = 10)
    
          
 def main():
@@ -217,4 +218,4 @@ def main():
       
 if __name__ == '__main__':
     main()
-#    app.run(debug = True)
+    app.run(debug = True)
