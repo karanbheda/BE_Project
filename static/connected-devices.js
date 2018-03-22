@@ -10,7 +10,7 @@ var geoProject = new Keen({
 
 Keen.ready(function(){
 
-  var tabVisitors = document.getElementById('tab-visitors');
+  /**var tabVisitors = document.getElementById('tab-visitors');
   var tabBrowsers = document.getElementById('tab-browsers');
   var tabGeography = document.getElementById('tab-geography');
   var activeRequest;
@@ -145,7 +145,7 @@ Keen.ready(function(){
   }
 
 
-
+**/
 
   // ----------------------------------------
   // New Activations

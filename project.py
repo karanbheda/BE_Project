@@ -11,7 +11,7 @@ from collections import Counter
 from textblob import TextBlob
 from nltk.stem.wordnet import WordNetLemmatizer
 import nltk
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 stop = set(stopwords.words('english'))
 exclude = set(string.punctuation)
 lemma = WordNetLemmatizer()
@@ -24,17 +24,29 @@ allSentiments = ['positive','negative']
 totalFeedbacks = 0
 
 class project():
-    def __init__(self):
+    def __init__(self, fileName, startDate, endDate):
         fetched_tweets = {}
         self.tweets = [] 
-        fileName = sys.argv[1]
+        self.fileName = fileName
         totalFeedbacks = 0
+        
+        date = {}
+        date[0] = [word for word in startDate.split("-")]
+        date[1] = [word for word in endDate.split("-")]
+            
         with open(fileName + '.json', 'r') as f:
             print("Reading ",fileName,".json")
             for line in f:
                 totalFeedbacks += 1 
                 tweet = json.loads(line)
-                fetched_tweets[tweet['id']] = tweet
+                tweetDate = tweet['date'].split("-")
+                flag = True
+                for i in range(3):
+                    if not (int(tweetDate[i]) >= int(date[0][i]) and int(tweetDate[i]) <= int(date[1][i])):
+                        flag = False
+                        break
+                if flag:        
+                    fetched_tweets[tweet['id']] = tweet
                 
         self.tweets = self.parseTweets(fetched_tweets)
         self.storePolarizedTweets()
@@ -49,8 +61,7 @@ class project():
 
         print(answerDictionary)
         
-    def printPieChart(self):
-        
+    def printPieChart(self): 
         for i in range(len(answerDictionary)):
             labels = []
             values = []
@@ -156,14 +167,12 @@ class project():
                 self.allClustersDictionary[len(self.allClustersDictionary)] = self.addToDictionary(dictionary, cleanText1)
     
     
-    def storePolarizedTweets(self):
-        fileName = sys.argv[1].split('.')[0]
-        
+    def storePolarizedTweets(self):        
         for x in allSentiments:
             print("Storing all the ",x," feedbacks")
             sentimentalFeedbacks = [tweet for tweet in self.tweets if tweet['sentiment'] == x]
             
-            f = open(fileName + "-" + x + ".json",'w')
+            f = open(self.fileName + "-" + x + ".json",'w')
             for tweet in sentimentalFeedbacks:
                 f.write("{\"id\":" + str(tweet['id']) + ",\"text\":\"" + tweet['text'] + "\",\"sentiment\":\"" + tweet['sentiment'] + "\"}\n")
                 
@@ -204,18 +213,23 @@ class project():
          
         return polarizedtweets
 
-@app.route('/result')
+@app.route('/')
+def initialize():
+    return render_template('index.html')
+  
+@app.route('/result',methods = ['POST', 'GET'])
 def result():
-    return render_template('index.html', result1 = 100, result2 = 10)
+    if request.method == 'POST':
+      fileName = request.form['filename']
+      startDate = request.form['startdate']
+      endDate = request.form['enddate']
+      xyz = project(fileName, startDate, endDate)
+      return render_template("result.html", result1 = answerDictionary[0], result2 = answerDictionary[1])
    
          
-def main():
-    if len(sys.argv) != 2:
-        print >> sys.stderr, 'Usage: %s [json file]' % (sys.argv[0])
-        exit(-1)
-        
+def main(): 
     xyz = project()
       
 if __name__ == '__main__':
-    main()
+    #main()
     app.run(debug = True)

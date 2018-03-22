@@ -38,10 +38,17 @@
 
         <div class="chart-wrapper">
           <div class="chart-title">
-            Traffic Stats
+            Enter details:
           </div>
           <div class="chart-stage">
-            <div class="row">
+            <form action = "http://localhost:5000/result" method = "POST">
+                <input type = "text" name = "filename" /><br>
+                <input type = "date" name = "startdate" id="startdate" min="1900-01-01" /><br>
+                <input type = "date" name = "enddate" id="enddate" /><br>
+                <p><input type = "submit" value = "submit" />
+            </form>
+          
+            <!--div class="row">
               <div class="col-xs-3">
                 <div class="tabbable tabs-left">
                   <ul class="nav nav-tabs">
@@ -61,7 +68,7 @@
                  <div class="tab-pane" id="geography"></div>
                 </div>
               </div>
-            </div>
+            </div-->
           </div>
         </div>
       </div>
@@ -132,8 +139,25 @@
   <!-- Project Analytics -->
   <script type="text/javascript" src="../static/keen-analytics.js"></script>
   <script>
-  	document.getElementById("users").value = {{ result1 }};
-  	document.getElementById("errors").value = {{ result2 }};
+  	//document.getElementById("users").value = {{ result1 }};
+  	//document.getElementById("errors").value = {{ result2 }};
+  	var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth()+1;
+    var yyyy = today.getFullYear();
+    dd = format(dd);
+    mm = format(mm);
+    sd = format(dd-1);
+    today = yyyy+'-'+mm+'-'+dd;
+    document.getElementById("enddate").setAttribute("max", today);
+    startDay = yyyy+'-'+mm+'-'+sd;
+    document.getElementById("startdate").setAttribute("max", startDay);
+    
+    function format(i){
+        if(i < 10)
+            return ('0'+i);
+        return i;
+    }
   </script>
 </body>
 </html>
