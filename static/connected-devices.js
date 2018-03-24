@@ -240,15 +240,7 @@ Keen.ready(function(){
   // });
 
   /*  This funnel is built from mock data */
-  var sample_funnel = new Keen.Dataviz()
-    .el('#chart-05')
-    .colors(['#00cfbb'])
-    .data({ result: [ 3250, 3000, 2432, 1504, 321 ] })
-    .height(340)
-    .type('bar')
-    .labels(['Purchased Device', 'Activated Device', 'First Session', 'Second Session', 'Invited Friend'])
-    .title(null)
-    .render();
+  
 
   // ----------------------------------------
   // Mapbox - Active Users

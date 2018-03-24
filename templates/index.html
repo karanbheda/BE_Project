@@ -3,7 +3,7 @@
 <head>
   <meta charset='utf-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
-  <title>Connected Devices</title>
+  <title>Analysis</title>
 
   <!-- Mapbox Dependencies -->
   <link href='https://api.tiles.mapbox.com/mapbox.js/v2.0.0/mapbox.css' rel='stylesheet' />
@@ -158,6 +158,16 @@
             return ('0'+i);
         return i;
     }
+    
+    var sample_funnel = new Keen.Dataviz()
+    .el('#chart-05')
+    .colors(['#00cfbb'])
+    .data({ result: [ 3250, 3000, 2432, 1504, 321 ] })
+    .height(340)
+    .type('bar')
+    .labels(['abc', 'asdasd Device', 'asdasd Session', 'asd Session', 'Invitasdadded Friend'])
+    .title(null)
+    .render();
   </script>
 </body>
 </html>

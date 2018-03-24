@@ -19,16 +19,16 @@ WORD = re.compile(r'\w+')
 p = nltk.PorterStemmer()
 app = Flask(__name__)
 
-answerDictionary = {}
 allSentiments = ['positive','negative']
-totalFeedbacks = 0
+totalFeedbacks = {'positive': 0, 'negative': 0}
+finalResult = dict()
+
 
 class project():
     def __init__(self, fileName, startDate, endDate):
         fetched_tweets = {}
         self.tweets = [] 
         self.fileName = fileName
-        totalFeedbacks = 0
         
         date = {}
         date[0] = [word for word in startDate.split("-")]
@@ -37,7 +37,6 @@ class project():
         with open(fileName + '.json', 'r') as f:
             print("Reading ",fileName,".json")
             for line in f:
-                totalFeedbacks += 1 
                 tweet = json.loads(line)
                 tweetDate = tweet['date'].split("-")
                 flag = True
@@ -49,17 +48,19 @@ class project():
                     fetched_tweets[tweet['id']] = tweet
                 
         self.tweets = self.parseTweets(fetched_tweets)
+        self.feedbacks = []
         self.storePolarizedTweets()
-        
-        for x,i in zip(allSentiments,range(len(allSentiments))):
-            self.feedbacks = self.getFeedbacks(fileName + '-' + x + '.json')
-            self.allClusters = {}
-            self.allClustersDictionary = {}
-            self.initializeClustering()
-            answerDictionary[i] = self.createAnswerDictionary()
-            #self.printPieChart()
 
-        print(answerDictionary)
+        self.allClusters = {}
+        self.allClustersDictionary = {}
+        self.initializeClustering()
+        self.formatFinalResult()
+        
+        print(finalResult)
+        
+    def formatFinalResult(self):
+        for i in range(len(self.allClusters)):
+            finalResult[self.getClusterLabel(i)] = self.allClusters[i]
         
     def printPieChart(self): 
         for i in range(len(answerDictionary)):
@@ -80,12 +81,6 @@ class project():
             
         plt.show()
         
-    def createAnswerDictionary(self):
-        dictionary = dict()
-        for i in range(len(self.allClusters)):
-            dictionary[self.getClusterLabel(i)] = self.allClusters[i]
-        
-        return dictionary
     
     def getFeedbacks(self, fileName):
         tweets = []
@@ -137,7 +132,8 @@ class project():
     
   
     def initializeClustering(self):
-        self.allClusters[0] = {self.feedbacks[0]['id']}
+        self.allClusters[0] = dict({'positive':set(), 'negative':set()})
+        self.allClusters[0][self.feedbacks[0]['sentiment']] = {self.feedbacks[0]['id']}
         dictionary = dict()
         cleanText = self.convertToNouns(self.feedbacks[0]['text'])
         self.allClustersDictionary[0] = self.addToDictionary(dictionary, cleanText)
@@ -155,14 +151,16 @@ class project():
                 threshold = self.getThreshold(bag1, bag2)
 
                 if distance < threshold:
-                    self.allClusters[ID2].add(self.feedbacks[i]['id'])
+                    self.allClusters[ID2][self.feedbacks[i]['sentiment']].add(self.feedbacks[i]['id'])
                     self.allClustersDictionary[ID2] = self.addToDictionary(self.allClustersDictionary[ID2], cleanText1)
                     flag = 1
                     break
                 ID2 = ID2 + 1
         
             if flag == 0:
-                self.allClusters[len(self.allClusters)] = {self.feedbacks[i]['id']}
+                x = len(self.allClusters)
+                self.allClusters[x] = dict({'positive':set(), 'negative':set()})
+                self.allClusters[x][self.feedbacks[i]['sentiment']] = {self.feedbacks[i]['id']}
                 dictionary = dict()
                 self.allClustersDictionary[len(self.allClustersDictionary)] = self.addToDictionary(dictionary, cleanText1)
     
@@ -170,11 +168,13 @@ class project():
     def storePolarizedTweets(self):        
         for x in allSentiments:
             print("Storing all the ",x," feedbacks")
-            sentimentalFeedbacks = [tweet for tweet in self.tweets if tweet['sentiment'] == x]
             
             f = open(self.fileName + "-" + x + ".json",'w')
-            for tweet in sentimentalFeedbacks:
-                f.write("{\"id\":" + str(tweet['id']) + ",\"text\":\"" + tweet['text'] + "\",\"sentiment\":\"" + tweet['sentiment'] + "\"}\n")
+            for tweet in self.tweets:
+                if tweet['sentiment'] == x:
+                    totalFeedbacks[x] = totalFeedbacks[x] + 1
+                    self.feedbacks.append(tweet)
+                    f.write("{\"id\":" + str(tweet['id']) + ",\"text\":\"" + tweet['text'] + "\",\"sentiment\":\"" + tweet['sentiment'] + "\"}\n")
                 
             f.close();
     
@@ -224,7 +224,7 @@ def result():
       startDate = request.form['startdate']
       endDate = request.form['enddate']
       xyz = project(fileName, startDate, endDate)
-      return render_template("result.html", result1 = answerDictionary[0], result2 = answerDictionary[1])
+      return render_template("result.html", result = finalResult, result1 = totalFeedbacks['positive'], result2 = totalFeedbacks['negative'], result3 = finalResult.keys())
    
          
 def main(): 
@@ -233,3 +233,4 @@ def main():
 if __name__ == '__main__':
     #main()
     app.run(debug = True)
+
