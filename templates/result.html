@@ -27,6 +27,13 @@
   <link rel="stylesheet" type="text/css" href="../static/keen-dashboards.css" />
   <link rel="stylesheet" type="text/css" href="../static/connected-devices.css" />
   <script src="../static/connected-devices.js" type="text/javascript"></script>
+  <style>
+    canvas {
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+    }
+    </style>
 </head>
 <body class="keen-dashboard" style="padding-top: 80px;">
 
@@ -96,10 +103,11 @@
       <div class="col-sm-6">
         <div class="chart-wrapper">
           <div class="chart-title">
-            Customer Engagement
+            Multibar Graph
           </div>
           <div class="chart-stage">
-            <div id="chart-05"></div>
+            <canvas id="chart" width="800" height="450"></canvas>
+
           </div>
           <div class="chart-notes">
           </div>
@@ -126,19 +134,58 @@
 
   <!-- Project Analytics -->
   <script type="text/javascript" src="../static/keen-analytics.js"></script>
+  <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
   <script>
   	document.getElementById("users").value = {{ result1 }};
-  	document.getElementById("errors").value = {{ result2 }};
-  	
-  	var sample_funnel = new Keen.Dataviz()
-    .el('#chart-05')
-    .colors(['#00cfbb'])
-    .data({ result: [ 1, 1, 1, 1,1] })
-    .height(340)
-    .type('bar')
-    .labels(['abc', 'asdasd Device', 'asdasd Session', 'asd Session', 'Invitasdadded Friend'])
-    .title(null)
-    .render();
+    document.getElementById("errors").value = {{ result2 }};
+    //console.log({{ result3|safe }})
+   
+    var received = {{ result3|safe }};
+    console.log(received);
+    
+    var l = {{ sendlist|safe }}
+    
+    console.log(l);
+    console.log(received[0]);
+    var pos = new Array();
+    var neg = new Array();
+    var t1 = {}
+    var t2={}
+    var score = {}
+    for(var i in received) {
+        t1 = l[received[i]][0];
+				pos.push(t1);
+        t2 = l[received[i]][1];
+        neg.push(t2);
+				//score.push(l[received[i]][1]);
+			}
+      //console.log(player);
+          new Chart(document.getElementById("chart"), {
+      type: 'bar',
+      data: {
+        labels: received,
+        datasets: [
+          {
+            label: "Positive",
+            backgroundColor: "#3e95cd",
+            data: pos
+          }, {
+            label: "Negative",
+            backgroundColor: "#8e5ea2",
+            data: neg
+          }
+        ]
+      },
+      options: {
+        title: {
+          display: true,
+          text: 'Feedbacks'
+        }
+      }
+  });
   </script>
 </body>
 </html>
