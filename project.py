@@ -22,7 +22,6 @@ app = Flask(__name__)
 allSentiments = ['positive','negative']
 totalFeedbacks = {'positive': 0, 'negative': 0}
 finalResult = dict()
-send = ""
 
 
 class project():
@@ -58,9 +57,7 @@ class project():
         self.formatFinalResult()
         
         print(finalResult)
-        #print(",".join(finalResult.keys()))
-        #send = ",".join(finalResult.keys())
-        #print(send)
+
     def formatFinalResult(self):
         for i in range(len(self.allClusters)):
             finalResult[self.getClusterLabel(i)] = self.allClusters[i]
@@ -227,22 +224,10 @@ def result():
       startDate = request.form['startdate']
       endDate = request.form['enddate']
       xyz = project(fileName, startDate, endDate)
-      send = json.dumps(finalResult.keys())
-      jsonsend={}
-      for i in range(0,len(finalResult.items())):
-        temp = finalResult.items()[i][0]
-        print(temp)
-        sendlist=[len(finalResult.items()[i][1]['positive']),len(finalResult.items()[i][1]['negative'])]
-        jsonsend[temp] =  sendlist
-      print(jsonsend)
-      #cannot send finalResult.keys() because of unicode miss match hence storing keys in send and then passing
-      return render_template("result.html", result = finalResult, result1 = totalFeedbacks['positive'], result2 = totalFeedbacks['negative'], result3 = send, sendlist = json.dumps(jsonsend))
-   
-         
-def main(): 
-    xyz = project()
+      
+      return render_template("result.html", result = finalResult, result1 = totalFeedbacks['positive'], result2 = totalFeedbacks['negative'], result3 = ['label1', 'label2'], result4 = [4,2], result5 = [3,5])
       
 if __name__ == '__main__':
-    #main()
     app.run(debug = True)
+
 

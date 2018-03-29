@@ -105,35 +105,7 @@
 
     <div class="row">
 
-      <div class="col-sm-6">
-        <div class="chart-wrapper">
-          <div class="chart-title">
-            Customer Engagement
-          </div>
-          <div class="chart-stage">
-            <div id="chart-05"></div>
-          </div>
-          <div class="chart-notes">
-          </div>
-        </div>
-      </div>
-
-      <div class="col-sm-6" id="mapwrap">
-        <div class="chart-wrapper">
-          <div class="chart-title">
-            <div class="btn-group-xs">Active Users
-              <button type="button" id="7days" class="btn btn-default">7 Days</button>
-              <button type="button" id="14days" class="btn btn-default">14 Days</button>
-              <button type="button" id="28days" class="btn btn-default">28 Days</button>
-            </div>
-          </div>
-          <div class="chart-stage">
-            <div id="map"></div>
-          </div>
-          <div class="chart-notes">
-          </div>
-        </div>
-      </div>
+      <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
     </div>
 
   <!-- Project Analytics -->
@@ -159,15 +131,6 @@
         return i;
     }
     
-    var sample_funnel = new Keen.Dataviz()
-    .el('#chart-05')
-    .colors(['#00cfbb'])
-    .data({ result: [ 3250, 3000, 2432, 1504, 321 ] })
-    .height(340)
-    .type('bar')
-    .labels(['abc', 'asdasd Device', 'asdasd Session', 'asd Session', 'Invitasdadded Friend'])
-    .title(null)
-    .render();
   </script>
 </body>
 </html>
