@@ -225,7 +225,7 @@ def result():
       endDate = request.form['enddate']
       xyz = project(fileName, startDate, endDate)
       
-      return render_template("result.html", result = finalResult, result1 = totalFeedbacks['positive'], result2 = totalFeedbacks['negative'], result3 = ['label1', 'label2'], result4 = [4,2], result5 = [3,5])
+      return render_template("result.html", result = finalResult, result1 = totalFeedbacks['positive'], result2 = totalFeedbacks['negative'])
       
 if __name__ == '__main__':
     app.run(debug = True)
