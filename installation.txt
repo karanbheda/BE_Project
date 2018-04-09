@@ -1,0 +1,27 @@
+Requirements
+
+1 python 2.x and above
+2 pip 9.0.1
+
+packages needed:
+1. numpy
+2. flask
+3. nltk
+4. textblob
+
+
+Steps to run:
+
+Ubuntu 14.04 and above..
+
+python autorun.py
+
+or
+
+install all dependencies seperately and then..
+python project.py example.json
+
+Windows 7 and above...
+
+install all dependencies seperately and then
+python project.py example.json
