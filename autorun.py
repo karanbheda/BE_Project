@@ -22,15 +22,6 @@ except ImportError:
     nltk.download('stopwords')
     
 try:
-    import matplotlib  
-    print('\nmatplotlib was installed')
-except ImportError:
-    print('\nThere was no such module installed')
-
-    print("Installing matplotlib..")
-    os.system("sudo pip install matplotlib")
-    
-try:
     import textblob  
     print('\ntextblob was installed')
 except ImportError:
