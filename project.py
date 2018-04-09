@@ -7,7 +7,6 @@ import bisect
 from numpy import cumsum, random
 import copy
 from nltk.corpus import stopwords
-import matplotlib.pyplot as plt
 from collections import Counter
 from textblob import TextBlob
 from nltk.stem.wordnet import WordNetLemmatizer
