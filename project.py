@@ -99,14 +99,14 @@ class project():
     def jaccardIndex(self, setA, setB):
         try:
             return 1 - float(len(setA.intersection(setB))) / float(len(setA.union(setB)))
-        except TypeError:
-            print ("Invalid type. Type set expected.")
+        except ZeroDivisionError:
+            return 0
 
     def getThreshold(self, setA, setB):
         try:
             return (len(setA.union(setB))/(len(setA.difference(setB)) + len(setB.difference(setA)) + len(setA.intersection(setB))))
-        except TypeError:
-            print ("Invalid type. Type set expected.")
+        except ZeroDivisionError:
+            return 0
     
     def convertToNouns(self, line):
         textBlob = TextBlob(line)

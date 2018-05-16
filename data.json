@@ -8,7 +8,7 @@
 {"id": 8,"text": "The room was very comfortable.","date":"2018-01-01"}
 {"id": 9,"text": "The location is terrible.","date":"2018-01-04"}
 {"id": 10,"text": "The Italian is way too good.","date":"2018-01-04"}
-{"id": 11,"text": "Mango Milkshake makes everything better on a sunny day.","date":"2018-01-04"}
+{"id": 11,"text": "Milkshakes makes everything better on a sunny day.","date":"2018-01-04"}
 {"id": 12,"text": "We went there for dinner.","date":"2018-01-05"}
 {"id": 13,"text": "The service is sloppy.","date":"2018-01-06"}
 {"id": 14,"text": "Best place for breakfast.","date":"2018-01-08"}
@@ -98,105 +98,105 @@
 {"id": 98, "text": "good food", "date": "2018-01-03"}
 {"id": 99, "text": "food was bad.", "date": "2018-04-02"}
 {"id": 100, "text": "fast service.good food.quality of food is very nice.", "date": "2018-03-01"}
-{"id":101,"text":"The food is awesome and worth the price","date":"2018-01-01"},
-{"id":102,"text":"Delicious food","date":"2018-01-02"},
-{"id":103,"text":"Best Service ever with awesome food","date":"2018-01-03"},
-{"id":104,"text":"Credit card not accepted. Bad service","date":"2018-01-04"},
-{"id":105,"text":"Parking not available.","date":"2018-01-05"},
-{"id":106,"text":"tasty food, must visit","date":"2018-01-06"},
-{"id":107,"text":"food too spicy and less salt","date":"2018-01-07"},
-{"id":108,"text":"Hotel is near station and very cheap food","date":"2018-01-08"},
-{"id":109,"text":"less variety of dishes and bad service","date":"2018-01-09"},
-{"id":110,"text":"awesome ambience","date":"2018-01-10"},
-{"id":111,"text":"staff quite helpful. Good service","date":"2018-01-11"},
-{"id":112,"text":"one must visit this café atleast once in life. ","date":"2018-01-12"},
-{"id":113,"text":"Tandoori is very nice","date":"2018-01-13"},
-{"id":114,"text":"Not worth the cost","date":"2018-01-14"},
-{"id":115,"text":"Food quite expensive compared to the quality and quantity","date":"2018-01-15"},
-{"id":116,"text":"Too much salt in food ","date":"2018-01-16"},
-{"id":117,"text":"All kind of payment modes accepted along with Tez","date":"2018-01-17"},
-{"id":118,"text":"Café not clean at all","date":"2018-01-18"},
-{"id":119,"text":"poor hygiene","date":"2018-01-19"},
-{"id":120,"text":"Tasty starters. Good service","date":"2018-01-20"},
-{"id":121,"text":"Service at its best. Must visit","date":"2018-01-21"},
-{"id":122,"text":"Food can be improved","date":"2018-01-22"},
-{"id":123,"text":"Location is not convienent","date":"2018-01-23"},
-{"id":124,"text":"Parking full always, need more space","date":"2018-01-24"},
-{"id":125,"text":"Café is conjusted and no privacy","date":"2018-01-25"},
-{"id":126,"text":"Food is awesome. Juices are the best","date":"2018-01-26"},
-{"id":127,"text":"delicious starters","date":"2018-01-27"},
-{"id":128,"text":"Proper proportion of everything in food with good service","date":"2018-01-28"},
-{"id":129,"text":"Service can be improved","date":"2018-01-29"},
-{"id":130,"text":"Power cut always","date":"2018-02-01"},
-{"id":131,"text":"Food served late and cold","date":"2018-02-02"},
-{"id":132,"text":"Awesome and tasty food","date":"2018-02-03"},
-{"id":133,"text":"Good service as always","date":"2018-02-04"},
-{"id":134,"text":"waiters are rude and not helpful at all","date":"2018-02-05"},
-{"id":135,"text":"Desserts are awesome","date":"2018-02-06"},
-{"id":136,"text":"Virgin mojjito must try","date":"2018-02-07"},
-{"id":137,"text":"home delivery not available","date":"2018-02-08"},
-{"id":138,"text":"less quantity comapred to the cost","date":"2018-02-09"},
-{"id":139,"text":"no place for full family need more space","date":"2018-02-10"},
-{"id":140,"text":"uncomfortable seats and small tables","date":"2018-02-11"},
-{"id":141,"text":"awesome place for couples","date":"2018-02-12"},
-{"id":142,"text":"beautiful ambience","date":"2018-02-13"},
-{"id":143,"text":"the food is really good especially pasta and burger","date":"2018-02-14"},
-{"id":144,"text":"need to improve dish quality","date":"2018-02-15"},
-{"id":145,"text":"well located with tasty food","date":"2018-02-16"},
-{"id":146,"text":"good to know that home delivery has been started","date":"2018-02-17"},
-{"id":147,"text":"quite far from station and no proper parking space","date":"2018-02-18"},
-{"id":148,"text":"roads outside café are not good, need to improve","date":"2018-02-19"},
-{"id":149,"text":"food well served","date":"2018-02-20"},
-{"id":150,"text":"too costly not worth it","date":"2018-02-21"},
-{"id":151,"text":"best food ever","date":"2018-02-22"},
-{"id":152,"text":"awesome service. Poor food","date":"2018-02-23"},
-{"id":153,"text":"Pets not allowed must search for some alternative","date":"2018-02-24"},
-{"id":154,"text":"Food is too spicy with less salt","date":"2018-02-25"},
-{"id":155,"text":"waiters not trained properly","date":"2018-04-01"},
-{"id":156,"text":"awesome food and awesome service","date":"2018-04-02"},
-{"id":157,"text":"no place to sit café always full","date":"2018-04-03"},
-{"id":158,"text":"manager Is bias, gives priority to friends over others","date":"2018-04-04"},
-{"id":159,"text":"need to improve quality of food","date":"2018-04-05"},
-{"id":160,"text":"seats are uncomfortable","date":"2018-04-06"},
-{"id":161,"text":"best food with reasonable price","date":"2018-04-07"},
-{"id":162,"text":"some dishes are never available","date":"2018-04-08"},
-{"id":163,"text":"food well served","date":"2018-04-09"},
-{"id":164,"text":"ambience at its best","date":"2018-04-10"},
-{"id":165,"text":"will recommend this café always","date":"2018-04-11"},
-{"id":166,"text":"chinese is not so good, rest food is fine","date":"2018-04-12"},
-{"id":167,"text":"virgin mojjito is the best","date":"2018-04-13"},
-{"id":168,"text":"chicken pizza with lots of toppings, awesome!!","date":"2018-04-14"},
-{"id":169,"text":"no variety in pizza available","date":"2018-04-15"},
-{"id":170,"text":"service tax is too much","date":"2018-04-16"},
-{"id":171,"text":"need to improve service and ambience","date":"2018-04-17"},
-{"id":172,"text":"inflexible timings and not good service","date":"2018-04-18"},
-{"id":173,"text":"food quality can be improved","date":"2018-04-19"},
-{"id":174,"text":"cost is too high","date":"2018-04-20"},
-{"id":175,"text":"parking space availability is a saviour","date":"2018-04-21"},
-{"id":176,"text":"too costly with no proper place to sit","date":"2018-04-22"},
-{"id":177,"text":"home delivery not available","date":"2018-04-23"},
-{"id":178,"text":"food delivered late with no proper toppings","date":"2018-04-24"},
-{"id":179,"text":"need a better place to sit and enjoy","date":"2018-04-25"},
-{"id":180,"text":"not as per expectations. Need to improve","date":"2018-04-26"},
-{"id":181,"text":"place is good and I will give 5 star rating for the food","date":"2018-04-27"},
-{"id":182,"text":"best place for meetings","date":"2018-04-28"},
-{"id":183,"text":"free wifi not available","date":"2018-04-29"},
-{"id":184,"text":"wifi speed is slow","date":"2018-04-30"},
-{"id":185,"text":"dishes are quite expensive with no proper service","date":"2018-03-02"},
-{"id":186,"text":"need to keep the place clean","date":"2018-03-03"},
-{"id":187,"text":"place not good no proper food","date":"2018-03-04"},
-{"id":188,"text":"food served in bad condition","date":"2018-03-05"},
-{"id":189,"text":"the staff is really good and welcoming","date":"2018-03-06"},
-{"id":190,"text":"kudos to this place","date":"2018-03-07"},
-{"id":191,"text":"awesome food","date":"2018-03-08"},
-{"id":192,"text":"order arrived in less than 10 minutes, so fast","date":"2018-03-09"},
-{"id":193,"text":"best ambience in the entire city","date":"2018-03-10"},
-{"id":194,"text":"need to reduce cost","date":"2018-03-11"},
-{"id":195,"text":"not accepting paytm and debit cards","date":"2018-03-12"},
-{"id":196,"text":"parking space not good","date":"2018-03-13"},
-{"id":197,"text":"no cctv camers installed, lost my phone in café","date":"2018-03-14"},
-{"id":198,"text":"best place to visit with free wifi","date":"2018-03-15"},
-{"id":199,"text":"need to open more branches","date":"2018-03-16"},
+{"id":101,"text":"The food is awesome and worth the price","date":"2018-01-01"}
+{"id":102,"text":"Delicious food","date":"2018-01-02"}
+{"id":103,"text":"Best Service ever with awesome food","date":"2018-01-03"}
+{"id":104,"text":"Credit card not accepted. Bad service","date":"2018-01-04"}
+{"id":105,"text":"Parking not available.","date":"2018-01-05"}
+{"id":106,"text":"tasty food, must visit","date":"2018-01-06"}
+{"id":107,"text":"food too spicy and less salt","date":"2018-01-07"}
+{"id":108,"text":"Hotel is near station and very cheap food","date":"2018-01-08"}
+{"id":109,"text":"less variety of dishes and bad service","date":"2018-01-09"}
+{"id":110,"text":"awesome ambience","date":"2018-01-10"}
+{"id":111,"text":"staff quite helpful. Good service","date":"2018-01-11"}
+{"id":112,"text":"one must visit this café atleast once in life. ","date":"2018-01-12"}
+{"id":113,"text":"Tandoori is very nice","date":"2018-01-13"}
+{"id":114,"text":"Not worth the cost","date":"2018-01-14"}
+{"id":115,"text":"Food quite expensive compared to the quality and quantity","date":"2018-01-15"}
+{"id":116,"text":"Too much salt in food ","date":"2018-01-16"}
+{"id":117,"text":"All kind of payment modes accepted along with Tez","date":"2018-01-17"}
+{"id":118,"text":"Café not clean at all","date":"2018-01-18"}
+{"id":119,"text":"poor hygiene","date":"2018-01-19"}
+{"id":120,"text":"Tasty starters. Good service","date":"2018-01-20"}
+{"id":121,"text":"Service at its best. Must visit","date":"2018-01-21"}
+{"id":122,"text":"Food can be improved","date":"2018-01-22"}
+{"id":123,"text":"Location is not convienent","date":"2018-01-23"}
+{"id":124,"text":"Parking full always, need more space","date":"2018-01-24"}
+{"id":125,"text":"Café is conjusted and no privacy","date":"2018-01-25"}
+{"id":126,"text":"Food is awesome. Juices are the best","date":"2018-01-26"}
+{"id":127,"text":"delicious starters","date":"2018-01-27"}
+{"id":128,"text":"Proper proportion of everything in food with good service","date":"2018-01-28"}
+{"id":129,"text":"Service can be improved","date":"2018-01-29"}
+{"id":130,"text":"Power cut always","date":"2018-02-01"}
+{"id":131,"text":"Food served late and cold","date":"2018-02-02"}
+{"id":132,"text":"Awesome and tasty food","date":"2018-02-03"}
+{"id":133,"text":"Good service as always","date":"2018-02-04"}
+{"id":134,"text":"waiters are rude and not helpful at all","date":"2018-02-05"}
+{"id":135,"text":"Desserts are awesome","date":"2018-02-06"}
+{"id":136,"text":"Virgin mojjito must try","date":"2018-02-07"}
+{"id":137,"text":"home delivery not available","date":"2018-02-08"}
+{"id":138,"text":"less quantity comapred to the cost","date":"2018-02-09"}
+{"id":139,"text":"no place for full family need more space","date":"2018-02-10"}
+{"id":140,"text":"uncomfortable seats and small tables","date":"2018-02-11"}
+{"id":141,"text":"awesome place for couples","date":"2018-02-12"}
+{"id":142,"text":"beautiful ambience","date":"2018-02-13"}
+{"id":143,"text":"the food is really good especially pasta and burger","date":"2018-02-14"}
+{"id":144,"text":"need to improve dish quality","date":"2018-02-15"}
+{"id":145,"text":"well located with tasty food","date":"2018-02-16"}
+{"id":146,"text":"good to know that home delivery has been started","date":"2018-02-17"}
+{"id":147,"text":"quite far from station and no proper parking space","date":"2018-02-18"}
+{"id":148,"text":"roads outside café are not good, need to improve","date":"2018-02-19"}
+{"id":149,"text":"food well served","date":"2018-02-20"}
+{"id":150,"text":"too costly not worth it","date":"2018-02-21"}
+{"id":151,"text":"best food ever","date":"2018-02-22"}
+{"id":152,"text":"awesome service. Poor food","date":"2018-02-23"}
+{"id":153,"text":"Pets not allowed must search for some alternative","date":"2018-02-24"}
+{"id":154,"text":"Food is too spicy with less salt","date":"2018-02-25"}
+{"id":155,"text":"waiters not trained properly","date":"2018-04-01"}
+{"id":156,"text":"awesome food and awesome service","date":"2018-04-02"}
+{"id":157,"text":"no place to sit café always full","date":"2018-04-03"}
+{"id":158,"text":"manager Is bias, gives priority to friends over others","date":"2018-04-04"}
+{"id":159,"text":"need to improve quality of food","date":"2018-04-05"}
+{"id":160,"text":"seats are uncomfortable","date":"2018-04-06"}
+{"id":161,"text":"best food with reasonable price","date":"2018-04-07"}
+{"id":162,"text":"some dishes are never available","date":"2018-04-08"}
+{"id":163,"text":"food well served","date":"2018-04-09"}
+{"id":164,"text":"ambience at its best","date":"2018-04-10"}
+{"id":165,"text":"will recommend this café always","date":"2018-04-11"}
+{"id":166,"text":"chinese is not so good, rest food is fine","date":"2018-04-12"}
+{"id":167,"text":"virgin mojjito is the best","date":"2018-04-13"}
+{"id":168,"text":"chicken pizza with lots of toppings, awesome!!","date":"2018-04-14"}
+{"id":169,"text":"no variety in pizza available","date":"2018-04-15"}
+{"id":170,"text":"service tax is too much","date":"2018-04-16"}
+{"id":171,"text":"need to improve service and ambience","date":"2018-04-17"}
+{"id":172,"text":"inflexible timings and not good service","date":"2018-04-18"}
+{"id":173,"text":"food quality can be improved","date":"2018-04-19"}
+{"id":174,"text":"cost is too high","date":"2018-04-20"}
+{"id":175,"text":"parking space availability is a saviour","date":"2018-04-21"}
+{"id":176,"text":"too costly with no proper place to sit","date":"2018-04-22"}
+{"id":177,"text":"home delivery not available","date":"2018-04-23"}
+{"id":178,"text":"food delivered late with no proper toppings","date":"2018-04-24"}
+{"id":179,"text":"need a better place to sit and enjoy","date":"2018-04-25"}
+{"id":180,"text":"not as per expectations. Need to improve","date":"2018-04-26"}
+{"id":181,"text":"place is good and I will give 5 star rating for the food","date":"2018-04-27"}
+{"id":182,"text":"best place for meetings","date":"2018-04-28"}
+{"id":183,"text":"free wifi not available","date":"2018-04-29"}
+{"id":184,"text":"wifi speed is slow","date":"2018-04-30"}
+{"id":185,"text":"dishes are quite expensive with no proper service","date":"2018-03-02"}
+{"id":186,"text":"need to keep the place clean","date":"2018-03-03"}
+{"id":187,"text":"place not good no proper food","date":"2018-03-04"}
+{"id":188,"text":"food served in bad condition","date":"2018-03-05"}
+{"id":189,"text":"the staff is really good and welcoming","date":"2018-03-06"}
+{"id":190,"text":"kudos to this place","date":"2018-03-07"}
+{"id":191,"text":"awesome food","date":"2018-03-08"}
+{"id":192,"text":"order arrived in less than 10 minutes, so fast","date":"2018-03-09"}
+{"id":193,"text":"best ambience in the entire city","date":"2018-03-10"}
+{"id":194,"text":"need to reduce cost","date":"2018-03-11"}
+{"id":195,"text":"not accepting paytm and debit cards","date":"2018-03-12"}
+{"id":196,"text":"parking space not good","date":"2018-03-13"}
+{"id":197,"text":"no cctv camers installed, lost my phone in café","date":"2018-03-14"}
+{"id":198,"text":"best place to visit with free wifi","date":"2018-03-15"}
+{"id":199,"text":"need to open more branches","date":"2018-03-16"}
 {"id":200,"text":"very happy with the place will surely recommend this place to everyone","date":"2018-03-17"}
 {"id":201, "text": "good food.", "date": "2018-01-02"}
 {"id": 202, "text": "amazing service. very good staff", "date": "2018-02-02"}
@@ -227,7 +227,7 @@
 {"id": 227, "text": "very fast service.but very expensive food.", "date": "2018-03-02"}
 {"id": 228, "text": "desserts are over priced.", "date": "2018-04-02"}
 {"id": 229, "text": "nice ambiance.", "date": "2018-01-02"}
-{"id": 230, "text": "amazing serice.staff is also very friendly.", "date": "2018-02-02"}
+{"id": 230, "text": "amazing service.staff is also very friendly.", "date": "2018-02-02"}
 {"id": 231, "text": "good breakfast and brunch.", "date": "2018-03-12"}
 {"id": 232, "text": "not that bad.", "date": "2018-04-13"}
 {"id": 233, "text": "overall very good.", "date": "2018-01-14"}
