@@ -1,0 +1,8 @@
+Note: Please make sure all the prerequisites are already installed. Refer to installation manual for more details
+
+Steps to run the program:
+1. Run the project, python3 project.py
+2. Open the web browser and go to  http://localhost:5000
+3. Enter the file name on which the analysis is to be done.
+4. Enter the start and end date between which the feedbacks will be fetched for analysis.
+5. On submitting the details, a detailed analysis of the feedbacks is obtained.
